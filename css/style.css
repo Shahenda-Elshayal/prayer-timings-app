@@ -1,0 +1,334 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+}
+
+:root {
+    --blue-color: #0075ff;
+    --blue-alt-color: #0d69d5;
+}
+
+*:focus {
+    outline: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* small */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* medium */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* large */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* ***************************************************************** */
+
+/* start second-page style */
+
+.main-page {
+    min-height: 100vh;
+    background-image: url(../images/mosque.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.main-page::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 65%);
+}
+
+.main-page .container {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    border-radius: 6px;
+    padding: 50px 30px;
+}
+
+.main-page .container h1 {
+    margin: 0 auto;
+    font-size: 44px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    position: relative;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.main-page .container h1::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background-color: white;
+    height: 1px;
+    width: 70%;
+}
+
+.main-page .container form .info {
+    display: flex;
+    gap: 35px;
+}
+
+.main-page .container form .info div {
+    flex: 1;
+}
+
+.main-page label {
+    font-size: 18px;
+    margin-bottom: 12px;
+    display: inline-flex;
+    font-weight: 500;
+}
+
+.main-page .container form .info div input {
+    width: 100%;
+    padding: 13px 10px;
+    border-radius: 4px;
+    border: none;
+}
+
+.main-page .container form .info div input::placeholder {
+    color: rgb(149, 149, 149);
+}
+
+.main-page .container form input[type="submit"] {
+    background-color: #031b69;
+    border: none;
+    padding: 20px;
+    width: 60%;
+    margin: 30px auto 0;
+    display: block;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+@media (max-width:767px) {
+    .main-page .container {
+        width: calc(100% - 60px);
+        padding: 30px 16px;
+    }
+
+    .main-page .container h1 {
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 36px;
+    }
+
+    .main-page .container h1::before {
+        width: 100%;
+    }
+
+    .main-page .container form .info {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .main-page .container form input[type="submit"] {
+        font-size: 24px;
+        padding: 15px;
+        width: 100%;
+    }
+}
+
+/* end main-page style */
+
+/* start second-page style */
+.second-page {
+    min-height: 100vh;
+    background-image: url(../images/mosque.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+.second-page::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 65%);
+}
+
+.second-page .container {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 40px 30px;
+    color: white;
+}
+
+.second-page .container .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #7c849c; */
+    color: white;
+    margin-bottom: 30px;
+}
+
+.second-page .container .head .icon {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.second-page .container .head .icon img {
+    max-width: 70px;
+}
+
+.second-page .container .head .icon h1 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 36px;
+}
+
+.second-page .container .head .info {
+    text-align: center;
+}
+
+.second-page .container .head .info p {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.second-page .container .head .info span {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.second-page .container .card {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(198px, 1fr));
+    gap: 30px;
+}
+
+.second-page .container .card .box {
+    background-color: #031349;
+    padding: 20px;
+    text-align: center;
+}
+
+.second-page .container .card .box img {
+    width: 70px;
+}
+
+.second-page .container .card .box h3 {
+    text-transform: uppercase;
+    position: relative;
+    font-size: 34px;
+    font-weight: normal;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.second-page .container .card .box h3::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+}
+
+.second-page .container .card .box p {
+    font-size: 26px;
+}
+
+
+@media (max-width:767px) {
+    .second-page {
+        height: 250vh;
+    }
+
+    .second-page .container {
+        width: calc(100% - 60px);
+        /* height: calc(100% - 60px); */
+        top: 60px;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+
+    .second-page .container .head {
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 20px;
+    }
+
+}
+
+
+
+/* end second-page style */
