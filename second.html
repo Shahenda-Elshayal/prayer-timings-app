@@ -114,7 +114,7 @@
 
         function prayer(city, country) {
 
-            fetch(`http://api.aladhan.com/v1/timingsByCity/today?city=${city}&country=${country}&method=5`)
+            fetch(`https://api.aladhan.com/v1/timingsByCity/today?city=${city}&country=${country}&method=5`)
                 .then(response => response.json())
                 .then(response => {
                     console.log(response.data);
