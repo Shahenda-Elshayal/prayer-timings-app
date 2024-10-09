@@ -17,7 +17,7 @@
         rel="stylesheet">
 
     <!-- <script src="node_modules/axios/dist/axios.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
 
 </head>
 
@@ -77,12 +77,49 @@
     </div>
     <!-- <script src="main.js"></script> -->
     <script>
+        // function prayer(city, country) {
+
+        //     axios.get(`http://api.aladhan.com/v1/timingsByCity/today?city=${city}&country=${country}&method=5`)
+        //         .then(response => {
+        //             console.log(response.data.data);
+        //             let day = response.data.data.date;
+        //             let prayerData = response.data.data.timings;
+
+        //             let fajr = document.querySelector(".fajr p")
+        //             fajr.innerHTML = prayerData.Fajr;
+
+        //             let dhuhr = document.querySelector(".dhuhr p")
+        //             dhuhr.innerHTML = prayerData.Dhuhr;
+
+        //             let asr = document.querySelector(".asr p")
+        //             asr.innerHTML = prayerData.Asr;
+
+        //             let maghrib = document.querySelector(".maghrib p")
+        //             maghrib.innerHTML = prayerData.Maghrib;
+
+        //             let isha = document.querySelector(".isha p")
+        //             isha.innerHTML = prayerData.Isha;
+
+        //             let date = document.querySelector(".info span");
+        //             date.innerHTML = day.readable;
+
+        //             let place = document.querySelector(".info p");
+        //             place.innerHTML = city;
+
+        //         })
+        //         .catch(error => {
+        //             console.error("There was an error fetching the data:", error);
+        //         });
+        // }
+
         function prayer(city, country) {
-            axios.get(`http://api.aladhan.com/v1/timingsByCity/today?city=${city}&country=${country}&method=5`)
+
+            fetch(`http://api.aladhan.com/v1/timingsByCity/today?city=${city}&country=${country}&method=5`)
+                .then(response => response.json())
                 .then(response => {
-                    console.log(response.data.data);
-                    let day = response.data.data.date;
-                    let prayerData = response.data.data.timings;
+                    console.log(response.data);
+                    let day = response.data.date;
+                    let prayerData = response.data.timings;
 
                     let fajr = document.querySelector(".fajr p")
                     fajr.innerHTML = prayerData.Fajr;
@@ -101,16 +138,14 @@
 
                     let date = document.querySelector(".info span");
                     date.innerHTML = day.readable;
-                    
+
                     let place = document.querySelector(".info p");
                     place.innerHTML = city;
 
                 })
-                .catch(error => {
-                    console.error("There was an error fetching the data:", error);
-                });
         }
 
+        // &&&&&&&&&&&&&&&&&&&&&&&&
         let city = window.sessionStorage.getItem("city");
         let country = window.sessionStorage.getItem("country");
 
