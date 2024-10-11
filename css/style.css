@@ -315,10 +315,10 @@ p {
 
     .second-page .container {
         width: calc(100% - 60px);
-        /* height: calc(100% - 60px); */
-        top: 60px;
-        left: 50%;
-        transform: translate(-50%,0);
+        height: calc(100% - 60px);
+        top: 30px;
+        left: 30px;
+        transform: translate(0,0);
     }
 
     .second-page .container .head {
