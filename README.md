@@ -1,10 +1,8 @@
+[View Live Demo](https://shahenda-elshayal.github.io/prayer-timings-app/)
+
 # Prayer Timings App
 
 A simple web application that displays daily prayer timings based on user input for city and country. Built with HTML, CSS, and JavaScript, utilizing the Fetch API for API integration.
-
-## Live Demo  
-
-[View Live Demo](https://shahenda-elshayal.github.io/prayer-timings-app/)
 
 ## Features
 
